@@ -1,2 +1,10 @@
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui" {
+  themes: forest;
+}
+
+@layer base {
+  button:not(:disabled) {
+    cursor: pointer;
+  }
+}
