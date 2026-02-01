@@ -49,7 +49,7 @@ export async function getActiveSessions(_, res) {
   try {
     const sessions = await Session.find({ status: "active" })
       .populate("host", "name profileImage")
-      .sort({ createdAt: -1 }.limit(20));
+      .sort({ createdAt: -1 }).limit(20);
     res.status(200).json({ sessions });
   } catch (error) {
     console.error("Error in getActiveSessions\n", error);
